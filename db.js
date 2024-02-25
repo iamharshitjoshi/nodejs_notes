@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 // define the MongoDB conncection URL 
 
-const mongoURL = 'mongodb+srv://harshit123:harshit12345@cluster0.a1xnyrq.mongodb.net/newdb' // replace 'mydatabase' with database name
+const mongoURL = process.env.MONGODB_URL; // replace 'mydatabase' with database name
 
 // set up MongoDB connection 
 mongoose.connect(mongoURL, {

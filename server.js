@@ -1,6 +1,9 @@
 const express = require('express');
 const app = express();
 
+// connection with database
+require('dotenv').config();
+
 // database connection ko server mai establish kar liya
 const db = require('./db');
 
@@ -19,8 +22,10 @@ const personRoutes = require('./routes/personRoutes');
 app.use('/person', personRoutes);
 app.use('/menuItem', menuItemRoutes);
 
+// env file se information uthani hai 
+const PORT = process.env.PORT || 3000
 
-app.listen(3000, ()=>{
+app.listen(PORT, ()=>{
     console.log("Port is running on server 3000...")
 });
 
