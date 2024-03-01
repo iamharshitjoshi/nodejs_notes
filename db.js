@@ -6,7 +6,6 @@ const mongoURL = process.env.MONGODB_URL; // replace 'mydatabase' with database 
 // set up MongoDB connection 
 mongoose.connect(mongoURL, {
     // Use new options and remove deprecated options
-   
     useNewUrlParser: true, // This can be removed safely without impacting the connection
     useUnifiedTopology: true // This can also be removed safely without impacting the connection
  

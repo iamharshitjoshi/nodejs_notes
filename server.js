@@ -11,6 +11,13 @@ const bodyParser = require('body-parser');
 app.use(bodyParser.json());  // convert json into js object and store in req.body 
 
 
+// middleware function 
+const logRequest=(req, res, next)=>{
+   console.log(`${new Date().toLocaleString()} Request Made to ${req.originalUrl}`);
+   next(); // move to next function 
+}
+
+app.use(logRequest);
 app.get ('/', (req, res)=>{
     res.send("hi i am learning nodejs");
 })
